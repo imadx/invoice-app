@@ -1,0 +1,82 @@
+:host {
+  background-color: #4e6775;
+  width: 250px;
+  color: #fff;
+  box-shadow: 0 0 40px 0 rgba(black, 0.3);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-weight: lighter;
+  margin: 0;
+  padding: 1rem;
+
+  span {
+    font-size: 0.9em;
+    opacity: 0.7;
+  }
+}
+
+.list {
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.footer {
+  font-size: small;
+}
+
+form {
+  padding: 1rem;
+
+  &.ng-touched.ng-invalid {
+    input.ng-invalid {
+      background: #ffc6c6;
+    }
+  }
+
+  input,
+  button {
+    width: 100%;
+    border-radius: 100px;
+    border: none;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.5rem;
+    outline: none;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #26d6e1;
+    text-transform: uppercase;
+    color: #4e626d;
+    font-family: "Roboto", sans-serif;
+
+    &:hover {
+      background-color: lighten(#26d6e1, 10);
+    }
+
+    &.inverted {
+      background-color: transparent;
+      border: solid thin #26d6e1;
+      color: #26d6e1;
+
+      &:hover {
+        background-color: rgba(lighten(#26d6e1, 10), 0.3);
+      }
+    }
+
+    &.primary {
+      background-color: #a9db82;
+
+      &:hover {
+        background-color: lighten(#a9db82, 10);
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  padding: 0.7rem 1rem;
+  background-color: rgba(#495e69, 0.7);
+
+  &:nth-child(2n) {
+    background-color: #495e69;
+  }
+
+  &:hover {
+    background-color: lighten(#495e69, 2);
+  }
+}
+
+.content {
+  flex: 1;
+
+  .description {
+    font-size: 10pt;
+  }
+  .amount {
+    font-size: 14pt;
+  }
+  .client {
+    font-size: 10pt;
+    text-transform: uppercase;
+  }
+}
+.actions {
+  display: flex;
+  align-items: center;
+
+  .button {
+    width: 12px;
+    height: 12px;
+    display: block;
+    background-color: #f34;
+    border-radius: 50%;
+    margin-left: 0.3rem;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.15s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  .delete {
+    background-color: #e86e6e;
+  }
+  .edit {
+    background-color: #eac852;
+  }
+}

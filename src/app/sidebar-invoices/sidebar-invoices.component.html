@@ -1,0 +1,13 @@
+<h1>Invoices</h1>
+
+<ul>
+  <li
+    *ngFor="let invoice of invoices"
+    (click)="emitActiveInvoice(invoice)"
+    [class]="{ active: invoice == activeInvoice }"
+  >
+    {{ invoice.date | date: "MMMM, yyyy" }}
+  </li>
+</ul>
+
+<div class="footer">⌨ by Ishan Madhusanka</div>

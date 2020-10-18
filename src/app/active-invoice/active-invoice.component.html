@@ -1,0 +1,12 @@
+<ng-container *ngIf="!!activeInvoice; else noActiveElement">
+  <app-sidebar-invoice-items
+    [activeInvoice]="activeInvoice"
+  ></app-sidebar-invoice-items>
+  <app-preview-area [activeInvoice]="activeInvoice"></app-preview-area>
+</ng-container>
+<ng-template #noActiveElement>
+  <div class="no-content">
+    <img src="assets/no-content.png" alt="No content" />
+    <span class="message">Select an invoice from the sidebar on left</span>
+  </div>
+</ng-template>

@@ -1,0 +1,39 @@
+<h3>
+  Invoice Items <br />
+  <span>{{ activeInvoice.date | date: "MMMM, dddd" }}</span>
+</h3>
+
+<div class="list">
+  <app-invoice-item
+    *ngFor="let item of activeInvoice.items"
+    [item]="item"
+    (delete)="removeItem(item)"
+    (edit)="editItem(item)"
+  ></app-invoice-item>
+</div>
+
+<form
+  [formGroup]="newInvoiceFormGroup"
+  (ngSubmit)="submitNewItem(newInvoiceFormGroup)"
+>
+  <input
+    formControlName="description"
+    type="text"
+    placeholder="Invoice Description"
+    required
+  />
+  <input formControlName="client" type="text" placeholder="Client" required />
+  <input
+    formControlName="currency"
+    type="text"
+    placeholder="Currency"
+    required
+  />
+  <input formControlName="amount" type="number" placeholder="Amount" required />
+  <button type="submit">{{ editingItem ? "Update Item" : "Add Item" }}</button>
+  <button type="button" class="inverted" (click)="resetItems()">Reset</button>
+</form>
+
+<form (ngSubmit)="printInvoice()">
+  <button class="primary">Print Invoice</button>
+</form>

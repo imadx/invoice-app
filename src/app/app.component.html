@@ -1,0 +1,7 @@
+<div class="container">
+  <app-sidebar-invoices
+    [invoices]="invoices"
+    (activeInvoiceUpdated)="setActiveInvoice($event)"
+  ></app-sidebar-invoices>
+  <app-active-invoice [activeInvoice]="activeInvoice"></app-active-invoice>
+</div>

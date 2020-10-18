@@ -1,0 +1,57 @@
+<div class="paper">
+  <img class="bg-art" src="assets/watermark.png" />
+  <div class="section">
+    <div class="main-title">Invoice</div>
+  </div>
+  <div class="section">
+    <div class="title">BILLED BY</div>
+    <div class="text-content">{{ activeInvoice.billedBy.name }}</div>
+    <div class="text-content">{{ activeInvoice.billedBy.addressLine1 }}</div>
+    <div class="text-content">{{ activeInvoice.billedBy.addressLine2 }}</div>
+  </div>
+  <div class="section">
+    <div class="title">BILLED TO</div>
+    <div class="text-content">{{ activeInvoice.billedTo.name }}</div>
+    <div class="text-content">{{ activeInvoice.billedTo.addressLine1 }}</div>
+    <div class="text-content">{{ activeInvoice.billedTo.addressLine2 }}</div>
+  </div>
+  <div class="section">
+    <div class="title">BILLED DATE</div>
+    <div class="text-content">
+      {{ activeInvoice.date | date: "MMMM dd, yyyy" }}
+    </div>
+  </div>
+  <div class="section list">
+    <div class="row header">
+      <div class="item"><span>Description</span></div>
+      <div class="item"><span>Client</span></div>
+      <div class="item"><span>Amount</span></div>
+    </div>
+    <div class="row" *ngFor="let item of activeInvoice.items">
+      <div class="item">
+        <span>{{ item.description }}</span>
+      </div>
+      <div class="item">
+        <span>{{ item.client }}</span>
+      </div>
+      <div class="item">
+        <span>{{ item.currency }} {{ item.amount | number: "0.2-2" }}</span>
+      </div>
+    </div>
+    <div class="row total">
+      <div class="item"><span>Total</span></div>
+      <div class="item"></div>
+      <div class="item">
+        <span>
+          {{ getTotalInvoiceCurrency() }}
+          {{ getTotalInvoiceAmount() | number: "0.2-2" }}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="signature-script">{{ activeInvoice.billedBy.name }}</div>
+    <div class="signature-underline">...........................</div>
+    <div class="text-content">{{ activeInvoice.billedBy.name }}</div>
+  </div>
+</div>
