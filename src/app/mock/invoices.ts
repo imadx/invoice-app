@@ -6,8 +6,8 @@ export const invoices: Invoice[] = [
     date: new Date(),
     billedBy: {
       name: 'Ishan Madhusanka',
-      addressLine1: '536A, Paradise Place',
-      addressLine2: 'Ragama',
+      addressLine1: 'Happy place,',
+      addressLine2: 'Nuwara Eliya',
     },
     billedTo: {
       name: 'Rhino Partners Pte. Ltd.',
