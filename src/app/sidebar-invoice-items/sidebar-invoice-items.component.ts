@@ -42,7 +42,7 @@ export class SidebarInvoiceItemsComponent implements OnInit {
       ]),
       amount: new FormControl(this.editingItem?.amount, [
         Validators.required,
-        regexValidator(/^[\d\.]+$/),
+        regexValidator(/^(-)?[\d\.]+$/),
       ]),
     });
   }
